@@ -14,7 +14,7 @@ let questions = [
         "id": "2",
         "Questions": "Which of these are planets in our solar system?",
         "question_type": "MCA",
-        "Choices": ["Earth", "Moon", "Mars", "Jupiter", "Sun", "Pluto"]
+        "Choices": ["Earth", "Moon", "Mars", "Jupiter"]
     },
     {
         "id": "3",
@@ -26,7 +26,7 @@ let questions = [
         "id": "4",
         "Questions": "Which of these are programming languages?",
         "question_type": "MCA",
-        "Choices": ["Java", "Python", "C++", "English", "JavaScript", "Ruby"]
+        "Choices": ["Java", "Python", "C++", "English"]
     },
     {
         "id": "5",

@@ -16,7 +16,7 @@ const answerkey = [
     },
     {
         "id": "4",
-        "Ans": ["A", "B", "C", "E", "F"]
+        "Ans": ["A", "B", "C"]
     },
     {
         "id": "5",
@@ -37,5 +37,8 @@ router.get("/", function (request, response) {
       response.send(answer);
     }
   });
+
+
+
 
 export default router
