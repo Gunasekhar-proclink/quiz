@@ -1,7 +1,7 @@
 import express from "express" 
 const router = express.Router(); 
 
-const answerkey = [
+let answerkey = [
     {
         "id": "1",
         "Ans": "A"
@@ -23,6 +23,9 @@ const answerkey = [
         "Ans": "A"
     }
 ]
+
+let totalScore = 0 ; 
+
 router.get("/", function (request, response) {
     response.send(answerkey);
   });
@@ -37,6 +40,17 @@ router.get("/", function (request, response) {
       response.send(answer);
     }
   });
+
+  router.post("/" , function(request , response){
+    const bodydata = request.body; 
+    // for(const prop in answerkey){
+    //     id1 = answerkey[prop]
+    // }
+    // answerkey.forEach((element) => {
+    //     if ()
+    // })
+
+  })
 
 
 
