@@ -2,12 +2,47 @@ import express from "express";
 const router = express.Router(); 
 
 let answerkey = [
-    { "id": "1", "Ans": ["A"] },
-    { "id": "2", "Ans": ["A", "C", "D"] },
-    { "id": "3", "Ans": ["A"] },
-    { "id": "4", "Ans": ["A", "B", "C"] },
-    { "id": "5", "Ans": ["A"] }
-];
+  {
+    "id": "1",
+    "answer": ["A"]
+  },
+  {
+    "id": "2",
+    "answer": ["A", "C", "D"]
+  },
+  {
+    "id": "3",
+    "answer": ["A"]
+  },
+  {
+    "id": "4",
+    "answer": ["A", "B", "C"]
+  },
+  {
+    "id": "5",
+    "answer": ["A"]
+  },
+  {
+    "id": "6",
+    "answer": ["A"]
+  },
+  {
+    "id": "7",
+    "answer": ["A", "B", "C"]
+  },
+  {
+    "id": "8",
+    "answer": ["A"]
+  },
+  {
+    "id": "9",
+    "answer": ["A", "C"]
+  },
+  {
+    "id": "10",
+    "answer": ["A"]
+  }
+] ; 
 
 let selectedAnswers = []; 
 let totalScore = 0; 
