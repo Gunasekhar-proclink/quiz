@@ -1,58 +1,37 @@
-import express from "express" 
+import express from "express"; 
 const router = express.Router(); 
 
 let answerkey = [
-    {
-        "id": "1",
-        "Ans": "A"
-    },
-    {
-        "id": "2",
-        "Ans": ["A", "C", "D"]
-    },
-    {
-        "id": "3",
-        "Ans": "A"
-    },
-    {
-        "id": "4",
-        "Ans": ["A", "B", "C"]
-    },
-    {
-        "id": "5",
-        "Ans": "A"
-    }
-]
+    { "id": "1", "Ans": ["A"] },
+    { "id": "2", "Ans": ["A", "C", "D"] },
+    { "id": "3", "Ans": ["A"] },
+    { "id": "4", "Ans": ["A", "B", "C"] },
+    { "id": "5", "Ans": ["A"] }
+];
 
-let totalScore = 0 ; 
+let selectedAnswers = []; 
+let totalScore = 0; 
 
 router.get("/", function (request, response) {
-    response.send(answerkey);
-  });
-  
-  // /movies/99 |: makes the id variable
-  router.get("/:id", function (request, response) {
-    const answerid = request.params.id;
-    const answer = answerkey.find((m) => m.id == answerid);
-    if (!answer) {
-      response.status(404).send(" Error 404 ! Movie Not found");
-    } else {
-      response.send(answer);
-    }
-  });
+  response.send(selectedAnswers);
+});
 
-  router.post("/" , function(request , response){
+router.post("/", function(request, response) {
     const bodydata = request.body; 
-    // for(const prop in answerkey){
-    //     id1 = answerkey[prop]
-    // }
-    // answerkey.forEach((element) => {
-    //     if ()
-    // })
 
-  })
+    totalScore = 0; 
+    answerkey.forEach((question) => {
+        const userAnswer = bodydata.find(answer => answer.id === question.id);
+        
+        if (userAnswer) {
+            const isCorrect = JSON.stringify(userAnswer.Ans) === JSON.stringify(question.Ans);
+            if (isCorrect) {
+                totalScore++;
+            }
+        }
+    });
+    selectedAnswers = bodydata; 
+    response.send({ totalScore });
+});
 
-
-
-
-export default router
+export default router;
